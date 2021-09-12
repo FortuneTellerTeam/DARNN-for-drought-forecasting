@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict the Drought Level</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+<!-- <link type="text/css" rel="stylesheet" href="style.css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+ <div class="login col-lg-12">
+  <h1>Risk-Adjusted Forecast of Drought Level</h1>
+  <h3>Enter the following inputs to forecast the drought levels based on the risk policy </h3>
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{url_for('predict')}}" method="POST">
+      <!-- <input type="text" name="age" placeholder="Age" required="required" /><br>
+      <input type="text" name="sex" placeholder="Sex" required="required" /><br>
+        <input type="text" name="bmi" placeholder="BMI" required="required" /><br>
+        <input type="text" name="children" placeholder="Children" required="required" /><br> -->
+        <!-- <input type="text" name="smoker" placeholder="Smoker" required="required" /><br> -->
+        <input type="text" name="region" placeholder="Enter the region (FIPS)" required="required" /><br>
+        <input type="text" name="date" placeholder="Up to date (YY-MM-DD)" required="required" /><br>
+        <input type="text" name="loss_ratio" placeholder="Loss ratio" required="required" /><br>
+        <button type="submit" style="font-size: 2em" class="btn btn-primary btn-block btn-large">Forecast</button>
+    </form>
+
+   <br>
+   <br>
+
+   <div class="col-lg-4 justify-center">
+ <image src="{{url_for('static',filename = uploaded_image)}}" style="width:500px">
+   
+ </div>
+  
+   
+ </div>
+
+</body>
+</html>
